@@ -10,7 +10,7 @@
 ## Single Cycle MIPS Architecture
 <img width="1037" alt="SCR-20230606-etiq" src="https://github.com/YehiaSharawy/MIPS-Architecture/assets/65984199/9da4ef50-dc75-4a6d-8729-9567e30a619f">
 
-## Some used paarameters
+## Some used parameters
 ### Memory File
 - Memory[0]= 0x”ABCDEF00”
 - Memory[1]= 0x”75746572”
