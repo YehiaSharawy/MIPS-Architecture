@@ -1,0 +1,2 @@
+xst -intstyle ise -ifn "D:/Student/Downloads/yehia/YehiaSharawy-20100519/PC_Counter.xst" -ofn "D:/Student/Downloads/yehia/YehiaSharawy-20100519/PC_Counter.syr" 
+xst -intstyle ise -ifn "D:/Student/Downloads/yehia/YehiaSharawy-20100519/PC_Counter.xst" -ofn "D:/Student/Downloads/yehia/YehiaSharawy-20100519/PC_Counter.syr" 

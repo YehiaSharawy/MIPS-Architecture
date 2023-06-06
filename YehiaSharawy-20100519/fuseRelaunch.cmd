@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "secureip" -o "D:/Student/Downloads/yehia/YehiaSharawy-20100519/SingleCycle_MIPS_Architecture_isim_beh.exe" -prj "D:/Student/Downloads/yehia/YehiaSharawy-20100519/SingleCycle_MIPS_Architecture_beh.prj" "work.SingleCycle_MIPS_Architecture" 

@@ -1,0 +1,372 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.16 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.16 secs
+ 
+--> Reading design: InstMem.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "InstMem.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "InstMem"
+Output Format                      : NGC
+Target Device                      : xc7a100t-3-csg324
+
+---- Source Options
+Top Module Name                    : InstMem
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 32
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Parsing VHDL file "D:\Student\Downloads\yehia\YehiaSharawy-20100519\InstMem.vhd" into library work
+Parsing entity <InstMem>.
+Parsing architecture <Behavioral> of entity <instmem>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating entity <InstMem> (architecture <Behavioral>) from library <work>.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <InstMem>.
+    Related source file is "D:\Student\Downloads\yehia\YehiaSharawy-20100519\InstMem.vhd".
+WARNING:Xst:647 - Input <read_address<1:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <read_address<31:5>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:2999 - Signal 'InstructionMemArray', unconnected in block 'InstMem', is tied to its initial value.
+WARNING:Xst:3035 - Index value(s) does not match array range for signal <InstructionMemArray>, simulation mismatch.
+    Found 7x32-bit single-port Read Only RAM <Mram_InstructionMemArray> for signal <InstructionMemArray>.
+    Found 32-bit register for signal <instruction>.
+    Summary:
+	inferred   1 RAM(s).
+	inferred  32 D-type flip-flop(s).
+Unit <InstMem> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 1
+ 7x32-bit single-port Read Only RAM                    : 1
+# Registers                                            : 1
+ 32-bit register                                       : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+Synthesizing (advanced) Unit <InstMem>.
+INFO:Xst:3231 - The small RAM <Mram_InstructionMemArray> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 7-word x 32-bit                     |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <read_address>  |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+Unit <InstMem> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 1
+ 7x32-bit single-port distributed Read Only RAM        : 1
+# Registers                                            : 32
+ Flip-Flops                                            : 32
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1710 - FF/Latch <instruction_4> (without init value) has a constant value of 0 in block <InstMem>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <instruction_6> (without init value) has a constant value of 0 in block <InstMem>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <instruction_7> (without init value) has a constant value of 0 in block <InstMem>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <instruction_8> (without init value) has a constant value of 0 in block <InstMem>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <instruction_9> (without init value) has a constant value of 0 in block <InstMem>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <instruction_10> (without init value) has a constant value of 0 in block <InstMem>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <instruction_13> (without init value) has a constant value of 0 in block <InstMem>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <instruction_14> (without init value) has a constant value of 0 in block <InstMem>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <instruction_19> (without init value) has a constant value of 0 in block <InstMem>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <instruction_24> (without init value) has a constant value of 0 in block <InstMem>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <instruction_30> (without init value) has a constant value of 0 in block <InstMem>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <instruction_1> in Unit <InstMem> is equivalent to the following FF/Latch, which will be removed : <instruction_11> 
+INFO:Xst:2261 - The FF/Latch <instruction_2> in Unit <InstMem> is equivalent to the following 2 FFs/Latches, which will be removed : <instruction_20> <instruction_25> 
+INFO:Xst:2261 - The FF/Latch <instruction_12> in Unit <InstMem> is equivalent to the following FF/Latch, which will be removed : <instruction_16> 
+INFO:Xst:2261 - The FF/Latch <instruction_26> in Unit <InstMem> is equivalent to the following 2 FFs/Latches, which will be removed : <instruction_27> <instruction_31> 
+INFO:Xst:2261 - The FF/Latch <instruction_0> in Unit <InstMem> is equivalent to the following FF/Latch, which will be removed : <instruction_28> 
+
+Optimizing unit <InstMem> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block InstMem, actual ratio is 0.
+FlipFlop instruction_26 has been replicated 2 time(s) to handle iob=true attribute.
+FlipFlop instruction_0 has been replicated 1 time(s) to handle iob=true attribute.
+FlipFlop instruction_2 has been replicated 2 time(s) to handle iob=true attribute.
+FlipFlop instruction_12 has been replicated 1 time(s) to handle iob=true attribute.
+FlipFlop instruction_1 has been replicated 1 time(s) to handle iob=true attribute.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 21
+ Flip-Flops                                            : 21
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : InstMem.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 15
+#      GND                         : 1
+#      LUT2                        : 3
+#      LUT3                        : 11
+# FlipFlops/Latches                : 21
+#      FD                          : 21
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 35
+#      IBUF                        : 3
+#      OBUF                        : 32
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 7a100tcsg324-3 
+
+
+Slice Logic Utilization: 
+ Number of Slice LUTs:                   14  out of  63400     0%  
+    Number used as Logic:                14  out of  63400     0%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:     14
+   Number with an unused Flip Flop:      14  out of     14   100%  
+   Number with an unused LUT:             0  out of     14     0%  
+   Number of fully used LUT-FF pairs:     0  out of     14     0%  
+   Number of unique control sets:         1
+
+IO Utilization: 
+ Number of IOs:                          65
+ Number of bonded IOBs:                  36  out of    210    17%  
+    IOB Flip Flops/Latches:              21
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                1  out of     32     3%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 21    |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -3
+
+   Minimum period: No path found
+   Minimum input arrival time before clock: 0.677ns
+   Maximum output required time after clock: 0.640ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 58 / 21
+-------------------------------------------------------------------------
+Offset:              0.677ns (Levels of Logic = 2)
+  Source:            read_address<4> (PAD)
+  Destination:       instruction_1 (FF)
+  Destination Clock: clk rising
+
+  Data Path: read_address<4> to instruction_1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            14   0.001   0.571  read_address_4_IBUF (read_address_4_IBUF)
+     LUT3:I0->O            2   0.097   0.000  Mram_InstructionMemArray11 (Mram_InstructionMemArray1)
+     FD:D                      0.008          instruction_1
+    ----------------------------------------
+    Total                      0.677ns (0.106ns logic, 0.571ns route)
+                                       (15.7% logic, 84.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 21 / 21
+-------------------------------------------------------------------------
+Offset:              0.640ns (Levels of Logic = 1)
+  Source:            instruction_26_1 (FF)
+  Destination:       instruction<31> (PAD)
+  Source Clock:      clk rising
+
+  Data Path: instruction_26_1 to instruction<31>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               1   0.361   0.279  instruction_26_1 (instruction_26_1)
+     OBUF:I->O                 0.000          instruction_31_OBUF (instruction<31>)
+    ----------------------------------------
+    Total                      0.640ns (0.361ns logic, 0.279ns route)
+                                       (56.4% logic, 43.6% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 8.00 secs
+Total CPU time to Xst completion: 8.03 secs
+ 
+--> 
+
+Total memory usage is 4617160 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   15 (   0 filtered)
+Number of infos    :    6 (   0 filtered)
+

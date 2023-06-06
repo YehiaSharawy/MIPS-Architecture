@@ -1,0 +1,30 @@
+Command line:
+   SingleCycle_MIPS_Architecture_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  51548
+
+Tue May 30 13:33:03 2023
+
+
+ Elaboration Time: 0.078125 sec
+
+ Current Memory Usage: 5154.74 Meg
+
+ Total Signals          : 104
+ Total Nets             : 2075
+ Total Signal Drivers   : 35
+ Total Blocks           : 23
+ Total Primitive Blocks : 21
+ Total Processes        : 26
+ Total Traceable Variables  : 16
+ Total Scalar Nets and Variables : 2577
+In process InstMem.vhd:16 
+ 
+
+ Total Simulation Time: 0.109375 sec
+
+ Current Memory Usage: 5154.74 Meg
+
+Tue May 30 13:40:11 2023
+
