@@ -1,16 +1,13 @@
-# MIPS-Architecture
- MIPS Processor implementation of single cycle using Xilinx ISE and VHDL.
+# MIPS Architecture
+Implementing a MIPS processor architecture of a single cycle using Xilinx ISE tool and VHDL as a programming language.
  
- ## Tech Stack
- - VHDL
- 
- ## Green Sheet for MIPS Architecture
+# Green Sheet for MIPS Architecture
 <img width="649" alt="SCR-20230606-etmm" src="https://github.com/YehiaSharawy/MIPS-Architecture/assets/65984199/c05e8335-7d86-4e54-bc46-de19e55e5b08">
 
-## Single Cycle MIPS Architecture
+# Single Cycle MIPS Architecture
 <img width="1037" alt="SCR-20230606-etiq" src="https://github.com/YehiaSharawy/MIPS-Architecture/assets/65984199/9da4ef50-dc75-4a6d-8729-9567e30a619f">
 
-## Some used parameters
+#Parameters used to run the architecture
 ### Memory File
 - Memory[0]= 0x”ABCDEF00”
 - Memory[1]= 0x”75746572”
@@ -34,8 +31,8 @@
 - slt $s1, $v0, $a2
 - Good_Processor: sub $s1, $a1, $a0
 
-## Output Simulation
+# Output Simulation
 ![2](https://github.com/YehiaSharawy/MIPS-Architecture/assets/65984199/57ed4b1f-d5b3-435f-a53e-369ba3051946)
 
-## Report
-[MIPS Project Report - Yehia Sharawy 20100519 .pdf](https://github.com/YehiaSharawy/MIPS-Architecture/files/11659017/MIPS.Project.Report.-.Yehia.Sharawy.20100519.pdf)
+# Documentation
+[MIPS Documentation.pdf](https://github.com/YehiaSharawy/MIPS-Architecture/files/11659017/MIPS.Project.Report.-.Yehia.Sharawy.20100519.pdf)
